@@ -29,7 +29,7 @@ for ($i = 1; $i <= 5; $i++) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>♟️  Mat En Web - Mats en X coups</title>
+    <title>♟️ Puzzle Trainer - Mats en X coups</title>
     
     <!-- Chessboard.js CSS depuis CDN -->
     <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
@@ -39,8 +39,8 @@ for ($i = 1; $i <= 5; $i++) {
 </head>
 <body>
     <div class="header">
-        <h1>♟️  Mat En Web ♟️</h1>
-        <p class="subtitle">Entraînement aux mats • Propulsé par DeuZa</p>
+        <h1>♟️ Puzzle Trainer</h1>
+        <p class="subtitle">Entraînement aux mats • Propulsé par Lichess</p>
     </div>
 
     <div id="status" class="status info">Sélectionnez un niveau pour commencer</div>
