@@ -10,6 +10,13 @@
 
 Interface web d'entraînement aux puzzles de mats, propulsée par la base de données Lichess.
 
+<p align="center">
+  <img src="https://github.com/deuza/mat-en-web/releases/download/v1.0.4/mew1.png"/>
+  <img src="https://github.com/deuza/mat-en-web/releases/download/v1.0.4/mew2.png"/>
+  <img src="https://github.com/deuza/mat-en-web/releases/download/v1.0.4/mew3.png"/>
+  <img src="https://github.com/deuza/mat-en-web/releases/download/v1.0.4/mew4.png"/>
+</p>
+
 ---
 
 ## Table des matières
