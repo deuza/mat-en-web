@@ -36,6 +36,10 @@ for ($i = 1; $i <= 5; $i++) {
     
     <!-- Styles personnalisés -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- favicon Lichess -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 <body>
     <div class="header">
