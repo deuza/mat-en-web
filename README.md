@@ -55,7 +55,7 @@ git clone https://github.com/deuza/mat-en-web.git
 cd mat-en-web/
 
 # Créer l'environnement Python pour installer python-chess servant à générer les positions FEN des puzzles
-python3 -venv venv 
+python3 -m venv venv 
 source venv/bin/activate
 pip install python-chess
 
