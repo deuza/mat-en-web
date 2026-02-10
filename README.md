@@ -1,12 +1,44 @@
-# ♟️ Puzzle Trainer - Mats en X coups
+[![GitHub last commit](https://img.shields.io/github/v/release/deuza/mat-en-web?style=plastic)](https://github.com/deuza/mat-en-web/commits/main)
+![GitHub Release Date](https://img.shields.io/github/release-date/deuza/mat-en-web)
+[![GitHub last commit](https://img.shields.io/github/last-commit/deuza/mat-en-web?style=plastic)](https://github.com/deuza/mat-en-web/commits/main)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/deuza/mat-en-web)
+[![License: CC0](https://img.shields.io/badge/license-CC0_1.0-lightgrey.svg?style=plastic)](https://creativecommons.org/publicdomain/zero/1.0/)
+![Hack The Planet](https://img.shields.io/badge/hack-the--planet-black?style=flat-square\&logo=gnu\&logoColor=white)
+![Built With Love](https://img.shields.io/badge/built%20with-%E2%9D%A4%20by%20DeuZa-red?style=plastic)  
+
+# ♟️ Mat En Web - Mats en X coups
 
 Interface web d'entraînement aux puzzles de mats, propulsée par la base de données Lichess.
+
+<p align="center">
+  <img src="https://github.com/deuza/mat-en-web/releases/download/v1.0.4/mew1.png"/>
+  <img src="https://github.com/deuza/mat-en-web/releases/download/v1.0.4/mew2.png"/>
+  <img src="https://github.com/deuza/mat-en-web/releases/download/v1.0.4/mew3.png"/>
+  <img src="https://github.com/deuza/mat-en-web/releases/download/v1.0.4/mew4.png"/>
+</p>
+
+---
+
+## Table des matières
+
+1. [Prérequis système](#1-prérequis)
+2. [Installation de l'environnement Python](#2-déploiement)
+3. [Accès au serveur web et utilisation](#3-accès)
+4. [Extraction et transformation des puzzles](4-mise-à-jour-des-fichier-des-exercices)
+5. [Informations techniques](#5-infos-techniques)
+6. [Remerciements](#6-remerciements)
 
 ## 🚀 Installation rapide
 
 ### 1. Prérequis
 - Serveur web avec PHP 7.4+ (Apache, Nginx...)
 - Python 3 avec `python-chess` (pour générer les puzzles)
+- git version 2.39.5
+
+Pour générer les puzzles :
+- wget | GNU Wget 1.21.3 built on linux-gnu.
+- zstd | Zstandard CLI (64-bit) v1.5.4, by Yann Collet 
+- python3 | Python 3.11.2
 
 ### 2. Déploiement
 ```bash
@@ -23,12 +55,15 @@ git clone https://github.com/deuza/mat-en-web.git
 cd mat-en-web/
 
 # Créer l'environnement Python pour installer python-chess servant à générer les positions FEN des puzzles
-python3 -venv venv
+python3 -m venv venv 
 source venv/bin/activate
 pip install python-chess
 
 # Télécharger et extraire les puzzles Lichess
 ./download_puzzles.sh
+
+# Sortir de l'environnement Python
+deactivate
 ```
 
 ### 3. Accès
@@ -49,7 +84,7 @@ puzzle-trainer/
 ├── mat4.csv            # Puzzles mat en 4 coups (à générer)
 ├── mat5.csv            # Puzzles mat en 5 coups (à générer)
 ├── download_puzzles.sh # Script de téléchargement Lichess
-├── extract.py          # Script d'extraction des puzzles
+├── extract.py          # Script d'extraction des puzzles en jouant le 1er coup
 ├── LICENSE             # Creative Commons Zero v1.0 Universal
 └── README.md           # Ce fichier
 ```
@@ -68,6 +103,24 @@ puzzle-trainer/
 - `S` : Afficher la solution
 - `Échap` : Annuler la promotion
 
+### 4. Mise à jour des fichier des exercices
+
+```bash
+# Placez vous dans le répertoire contenant les exercices
+cd /var/www/html/mat-en-web/
+
+# ⚠️  Activer l'environnement Python pour utiliser python-chess pour génèrer les positions FEN des puzzles via le script extract.py
+source venv/bin/activate
+
+# Télécharger et extraire les puzzles Lichess
+./download_puzzles.sh
+
+# Sortir de l'environnement Python
+deactivate
+```
+
+### 5. Infos techniques
+
 ## 🔧 Format des fichiers CSV
 
 ```
@@ -83,16 +136,28 @@ PuzzleId,FEN,Solution,URL,OpeningTags
 
 ## 📝 Notes techniques
 
-- L'échiquier s'oriente automatiquement selon la couleur qui joue
-- La promotion propose le choix entre Dame, Tour, Fou et Cavalier
-- Les stats de session sont en mémoire (pas de persistance)
-- Aucune dépendance externe sauf jQuery et Chessboard.js (CDN)
+- L'échiquier s'oriente automatiquement selon la couleur qui à le trait
+- La promotion d'un Pion propose le choix entre Dame, Tour, Fou et Cavalier
+- Les stats de session sont uniquement en mémoire (aucune persistance)
+- Dépendance externe jQuery et Chessboard.js (CDN)
 
-## 🙏 Crédits
+## 🌐 Ressources externes
+
+- **Base Lichess** : https://database.lichess.org/
+- **Documentation python-chess** : https://python-chess.readthedocs.io/
+- **Notation UCI** : https://www.chessprogramming.org/UCI
+- **Version CLI** : [mat-en](https://github.com/deuza/mat-en/)
+
+## Soucis connus
+
+- Utilisation via les téléphones mobiles
+
+### 6. Remerciements
 
 - Puzzles : [Lichess.org](https://lichess.org/) - Base de données ouverte
 - Échiquier : [chessboard.js](https://chessboardjs.com/)
 - Logique : [chess.js](https://github.com/jhlywa/chess.js)
+- Version CLI : [mat-en](https://github.com/deuza/mat-en/)
 
 ---
 *Bon jeu ! 🎯*
