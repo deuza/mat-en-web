@@ -185,47 +185,19 @@ body {
     align-items: start;
 }
 
-/* Wrapper de l'échiquier avec coordonnées */
+/* Wrapper de l'échiquier */
 .board-wrapper {
     background: white;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: 30px 1fr;
-    grid-template-rows: 1fr 30px;
-    gap: 5px;
-}
-
-.chess-board {
-    grid-column: 2;
-    grid-row: 1;
-    width: 100%;
-    max-width: 500px;
+    width: 540px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
-.coordinates-vertical {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-weight: 600;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.coordinates-horizontal {
-    grid-column: 2;
-    grid-row: 2;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-weight: 600;
-    color: var(--text-light);
-    font-size: 0.9rem;
+.chess-board {
+    width: 100%;
 }
 
 /* Panel d'info */

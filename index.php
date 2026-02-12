@@ -36,10 +36,6 @@ for ($i = 1; $i <= 5; $i++) {
     
     <!-- Styles personnalisés -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- favicon Lichess -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
 </head>
 <body>
     <div class="header">
@@ -82,15 +78,7 @@ for ($i = 1; $i <= 5; $i++) {
         <div class="main-container">
             <!-- Échiquier -->
             <div class="board-wrapper">
-                <div class="coordinates-vertical" id="coordsVertical">
-                    <span>8</span><span>7</span><span>6</span><span>5</span>
-                    <span>4</span><span>3</span><span>2</span><span>1</span>
-                </div>
                 <div id="board" class="chess-board"></div>
-                <div class="coordinates-horizontal" id="coordsHorizontal">
-                    <span>a</span><span>b</span><span>c</span><span>d</span>
-                    <span>e</span><span>f</span><span>g</span><span>h</span>
-                </div>
             </div>
 
             <!-- Panel d'info -->

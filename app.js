@@ -208,7 +208,6 @@ async function loadNewPuzzle() {
         if (newOrientation !== boardOrientation) {
             boardOrientation = newOrientation;
             board.orientation(newOrientation);
-            updateCoordinates(newOrientation);
         }
         
         board.position(currentPuzzle.fen);
@@ -367,20 +366,6 @@ function cancelPromotion() {
 function flipBoard() {
     board.flip();
     boardOrientation = boardOrientation === 'white' ? 'black' : 'white';
-    updateCoordinates(boardOrientation);
-}
-
-function updateCoordinates(orientation) {
-    const vertCoords = document.getElementById('coordsVertical');
-    const horzCoords = document.getElementById('coordsHorizontal');
-    
-    if (orientation === 'white') {
-        vertCoords.innerHTML = '<span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>';
-        horzCoords.innerHTML = '<span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>';
-    } else {
-        vertCoords.innerHTML = '<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>';
-        horzCoords.innerHTML = '<span>h</span><span>g</span><span>f</span><span>e</span><span>d</span><span>c</span><span>b</span><span>a</span>';
-    }
 }
 
 function updatePuzzleInfo() {
