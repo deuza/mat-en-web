@@ -65,7 +65,7 @@ fi
 # Décompression
 echo -e "\n${YELLOW}Décompression du fichier $COMPRESSED ...${NC}"
 if [ -f "$DECOMPRESSED" ]; then
-    echo -e "${YELLOW}Le fichier $DECOMPRESSED existe déjà. Souhaitez vous le remplacer ? (conseilllé) (y/N)${NC}"
+    echo -e "${YELLOW}Le fichier $DECOMPRESSED existe déjà. Souhaitez vous le remplacer ? (conseillé) (y/N)${NC}"
     read -r response
     if [[ "$response" =~ ^[Yy]$ ]]; then
         rm "$DECOMPRESSED"
@@ -89,7 +89,7 @@ echo -e "\n${YELLOW}Souhaitez vous effacer le fichier $COMPRESSED ? (conseillé)
 read -r response
 if [[ "$response" =~ ^[Yy]$ ]]; then
     rm "$COMPRESSED"
-    echo -e "\n${GREEN}Le fichier $COMPRESSED à été supprimé${NC}"
+    echo -e "\n${GREEN}Le fichier $COMPRESSED a été supprimé${NC}"
 else
     echo -e "\n${GREEN}Le fichier $COMPRESSED est conservé${NC}"
 fi
@@ -100,23 +100,12 @@ echo ""
 echo -e "\n${YELLOW}Souhaitez vous créer l'ensemble des fichiers d'exercice contenus dans le fichier $DECOMPRESSED (conseillé) ? (y/N)${NC}"
 read -r response
 if [[ "$response" =~ ^[Yy]$ ]]; then
-    # Vérifier que le venv existe
-    if [ ! -d "venv" ]; then
-        echo -e "${RED}❌ Le venv n'existe pas encore !${NC}"
-        echo -e "${YELLOW}Créez d'abord l'environnement :${NC}"
-        echo "  python3 -m venv venv"
-        echo "  source venv/bin/activate"
-        echo "  pip install python-chess"
-        echo ""
-        echo -e "${YELLOW}Puis relancez : $0${NC}"
-    else
-        source venv/bin/activate
-        for i in {1..5}; do
-		echo -e "\n${YELLOW}Extraction des mats en $i coups ... ${NC}"
-                ./extract.py --mat-en $i --verbose $DECOMPRESSED > mat${i}.csv
-		echo -e "\n${GREEN}✓ Le ficher mat${i}.csv créé ${NC}"
-        done
-    fi
+    source venv/bin/activate
+    for i in {1..5}; do
+         echo -e "\n${YELLOW}Extraction des mats en $i coups ... ${NC}"
+        ./extract.py --mat-en $i --verbose $DECOMPRESSED > mat${i}.csv
+        echo -e "\n${GREEN}✓ Le fichier mat${i}.csv a été généré${NC}"
+    done
 else
     echo -e "\n${YELLOW}Le fichier $DECOMPRESSED est prêt à parser avec extract.py !${NC}"
 fi
@@ -127,7 +116,7 @@ echo -e "\n${YELLOW}Souhaitez vous effacer le fichier $DECOMPRESSED ? (conseill�
 read -r response
 if [[ "$response" =~ ^[Yy]$ ]]; then
     rm "$DECOMPRESSED"
-    echo -e "\n${GREEN}Le fichier $DECOMPRESSED à été supprimé${NC}"
+    echo -e "\n${GREEN}Le fichier $DECOMPRESSED a été supprimé${NC}"
 else
     echo -e "\n${GREEN}Le fichier $DECOMPRESSED est conservé${NC}"
 fi
