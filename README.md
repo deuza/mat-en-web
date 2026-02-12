@@ -24,7 +24,7 @@ Interface web d'entraînement aux puzzles de mats, propulsée par la base de don
 1. [Prérequis système](#1-prérequis)
 2. [Installation de l'environnement Python](#2-déploiement)
 3. [Accès au serveur web et utilisation](#3-accès)
-4. [Extraction et transformation des puzzles](4-mise-à-jour-des-fichier-des-exercices)
+4. [Extraction et transformation des puzzles](#4-mise-à-jour-des-fichier-des-exercices)
 5. [Informations techniques](#5-infos-techniques)
 6. [Remerciements](#6-remerciements)
 
@@ -103,13 +103,13 @@ puzzle-trainer/
 - `S` : Afficher la solution
 - `Échap` : Annuler la promotion
 
-### 4. Mise à jour des fichier des exercices
+### 4. Mise à jour des fichier d'exercices
 
 ```bash
 # Placez vous dans le répertoire contenant les exercices
 cd /var/www/html/mat-en-web/
 
-# ⚠️  Activer l'environnement Python pour utiliser python-chess pour génèrer les positions FEN des puzzles via le script extract.py
+# Activer l'environnement Python pour utiliser python-chess pour générer les positions FEN des puzzles via le script extract.py
 source venv/bin/activate
 
 # Télécharger et extraire les puzzles Lichess
@@ -136,7 +136,7 @@ PuzzleId,FEN,Solution,URL,OpeningTags
 
 ## 📝 Notes techniques
 
-- L'échiquier s'oriente automatiquement selon la couleur qui à le trait
+- L'échiquier s'oriente automatiquement selon la couleur qui a le trait
 - La promotion d'un Pion propose le choix entre Dame, Tour, Fou et Cavalier
 - Les stats de session sont uniquement en mémoire (aucune persistance)
 - Dépendance externe jQuery et Chessboard.js (CDN)
