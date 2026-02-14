@@ -175,7 +175,7 @@ for ($i = 1; $i <= 5; $i++) {
   Programme sous licence
   <a href="https://creativecommons.org/publicdomain/zero/1.0/" style="color: white;">CC0</a>
   disponible ici :
-  <a href="https://github.com/deuza/mat-en-web" style="color: white;">github.com/deuza/chkpwd</a>
+  <a href="https://github.com/deuza/mat-en-web" style="color: white;">github.com/deuza/mat-en-web</a>
 </p>
 
 
